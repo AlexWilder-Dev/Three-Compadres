@@ -32,6 +32,11 @@ at build time (see `vite.config.ts`).
 `.github/workflows/deploy.yml` builds and deploys to GitHub Pages on every push to `main`, and can be run by hand
 from the Actions tab. In the repo settings, set **Pages → Source** to **GitHub Actions**.
 
+## Also in this repo
+
+[`mimos/`](mimos/) is a separate static demo for Mimo's Lounge, Bar & Grill, Tooting. No build step: the deploy
+workflow copies it into the Pages build, where it's served at `/mimos/`. See [`mimos/README.md`](mimos/README.md).
+
 ---
 
 Site by AlexWilder-Dev

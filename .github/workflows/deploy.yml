@@ -25,6 +25,10 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
+      - name: Add the Mimo's demo at /mimos/
+        run: |
+          cp -r mimos dist/mimos
+          rm -rf dist/mimos/scripts dist/mimos/*.md
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:
