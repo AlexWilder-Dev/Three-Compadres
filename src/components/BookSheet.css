@@ -26,7 +26,6 @@
   border-bottom: 0;
   border-radius: 28px 28px 0 0;
   box-shadow: 0 -20px 60px rgba(0, 0, 0, 0.5);
-  touch-action: none;
 }
 
 @media (min-width: 720px) {
@@ -47,9 +46,17 @@
 }
 
 .sheet__grab {
+  display: flex;
+  justify-content: center;
+  margin: -28px -22px 6px;
+  padding: 14px 0 12px;
+  cursor: grab;
+  touch-action: none;
+}
+
+.sheet__grab span {
   width: 48px;
   height: 5px;
-  margin: -12px auto 14px;
   border-radius: 99px;
   background: var(--char-500);
 }

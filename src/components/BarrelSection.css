@@ -61,10 +61,6 @@
   --icon-lid: var(--butter);
 }
 
-.barrel__eyebrow svg {
-  filter: drop-shadow(0 0 0 transparent);
-}
-
 .barrel__title {
   color: var(--butter);
 }

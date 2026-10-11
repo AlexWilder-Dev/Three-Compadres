@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
+import { AnimatePresence, motion, useDragControls, useReducedMotion } from 'framer-motion'
 import { venue } from '../data/venue'
 import { useOpenStatus } from '../hooks/useOpenStatus'
 import { DAY_NAMES, formatRange } from '../lib/hours'
@@ -16,6 +16,8 @@ export function BookSheet() {
   const reduced = useReducedMotion()
   const panelRef = useRef<HTMLDivElement>(null)
   const firstRef = useRef<HTMLAnchorElement>(null)
+  // Drag to dismiss from the handle only, so the sheet's content can still scroll on short screens.
+  const dragControls = useDragControls()
 
   useEffect(() => {
     if (!isOpen) return
@@ -69,13 +71,17 @@ export function BookSheet() {
             exit={reduced ? { opacity: 0 } : { y: '110%' }}
             transition={spring}
             drag={reduced ? false : 'y'}
+            dragControls={dragControls}
+            dragListener={false}
             dragConstraints={{ top: 0, bottom: 0 }}
             dragElastic={{ top: 0.05, bottom: 0.7 }}
             onDragEnd={(_, info) => {
               if (info.offset.y > 120 || info.velocity.y > 600) close()
             }}
           >
-            <div className="sheet__grab" aria-hidden="true" />
+            <div className="sheet__grab" aria-hidden="true" onPointerDown={(e) => dragControls.start(e)}>
+              <span />
+            </div>
             <button className="sheet__close" onClick={close} aria-label="Close">
               <Close />
             </button>
