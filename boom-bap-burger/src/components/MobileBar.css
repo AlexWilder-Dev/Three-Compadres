@@ -1,0 +1,66 @@
+.mobile-bar {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .mobile-bar {
+    position: fixed;
+    inset: auto 0 0;
+    z-index: 95;
+    display: flex;
+    gap: 8px;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    background: rgba(11, 9, 8, 0.94);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid var(--line);
+  }
+
+  .mobile-bar a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 880;
+    font-stretch: 110%;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+
+  .mobile-bar__book {
+    flex: 1;
+    flex-direction: column;
+    gap: 0;
+    overflow: hidden;
+    background: var(--white);
+    color: var(--black);
+    line-height: 1.15;
+  }
+
+  .mobile-bar__book small {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    opacity: 0.7;
+  }
+
+  .mobile-bar__book:active {
+    background: var(--amber);
+  }
+
+  .mobile-bar__call {
+    gap: 8px;
+    padding: 0 20px;
+    border: 2px solid var(--line-strong);
+    color: var(--white);
+  }
+
+  .mobile-bar__call svg {
+    width: 18px;
+    height: 18px;
+  }
+}

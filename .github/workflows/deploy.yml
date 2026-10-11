@@ -23,8 +23,17 @@ jobs:
         with:
           node-version: 22
           cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            boom-bap-burger/package-lock.json
       - run: npm ci
       - run: npm run build
+      - name: Build the Boom Bap Burger demo
+        working-directory: boom-bap-burger
+        run: |
+          npm ci
+          npm run build
+      - run: cp -r boom-bap-burger/dist dist/boom-bap-burger
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:

@@ -1,0 +1,73 @@
+.burger-art {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.burger-art * {
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.b-bun,
+.b-leaf,
+.b-line,
+.b-ring {
+  fill: var(--black);
+  stroke: var(--white);
+  stroke-width: 3;
+}
+
+.b-meat {
+  fill: var(--brown);
+  stroke: var(--white);
+  stroke-width: 3;
+}
+
+.b-bacon {
+  fill: var(--oxblood-2);
+  stroke: var(--white);
+  stroke-width: 2.5;
+}
+
+.b-fat {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.75);
+  stroke-width: 2;
+}
+
+.b-char,
+.b-strand {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.55);
+  stroke-width: 2;
+}
+
+.b-cheese {
+  fill: var(--amber);
+  stroke: var(--white);
+  stroke-width: 2.5;
+}
+
+.b-sauce {
+  fill: var(--white);
+}
+
+.b-seed {
+  fill: var(--white);
+}
+
+.b-dots {
+  stroke: var(--white);
+  stroke-width: 2.4;
+}
+
+.b-shine {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.55);
+  stroke-width: 3;
+}
+
+.b-shadow {
+  fill: rgba(176, 112, 80, 0.22);
+}

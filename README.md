@@ -27,6 +27,11 @@ at build time (see `vite.config.ts`).
   `photos` in `venue.ts`: `barrel` and `welcome` slots, plus `gallery` (the gallery section only shows when it has photos).
 - **Reviews:** add Google reviews to `reviews` in `venue.ts`, word for word. The section stays hidden while it's empty.
 
+## Also in this repo
+
+[`boom-bap-burger/`](boom-bap-burger/) is a separate demo for Boom Bap Burger, with its own README. The deploy workflow
+publishes it at `/boom-bap-burger/` on the same Pages site.
+
 ## Deploy
 
 `.github/workflows/deploy.yml` builds and deploys to GitHub Pages on every push to `main`, and can be run by hand

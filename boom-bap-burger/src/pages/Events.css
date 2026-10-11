@@ -1,0 +1,263 @@
+.events__site {
+  display: grid;
+  gap: clamp(16px, 2vw, 24px);
+}
+
+.flyer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--white);
+  color: var(--black);
+}
+
+.flyer__photo {
+  position: relative;
+  min-height: 420px;
+}
+
+.flyer__photo .photo {
+  position: absolute;
+  inset: 0;
+  filter: grayscale(0.35) contrast(1.1);
+}
+
+.flyer__sticker {
+  right: -24px;
+  bottom: 18px;
+}
+
+.flyer__body {
+  display: grid;
+  align-content: center;
+  justify-items: start;
+  gap: 18px;
+  padding: clamp(28px, 4vw, 56px);
+  background-color: var(--white);
+  background-image: radial-gradient(rgba(48, 16, 16, 0.14) 1.2px, transparent 1.6px);
+}
+
+.flyer__where {
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--oxblood);
+}
+
+.flyer__title {
+  font-size: clamp(48px, 6vw, 92px);
+  line-height: 0.92;
+}
+
+.flyer__next {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.flyer__next svg {
+  width: 20px;
+  height: 20px;
+}
+
+.flyer__eq {
+  color: var(--oxblood);
+  height: 18px;
+}
+
+.flyer__blurb {
+  max-width: 42ch;
+  font-size: 17px;
+}
+
+.flyer__genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.flyer__genres li {
+  padding: 6px 14px 5px;
+  border-radius: 6px;
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.2vw, 28px);
+  line-height: 1.1;
+  cursor: default;
+}
+
+.flyer__genres li:hover {
+  background: var(--oxblood);
+}
+
+.flyer__actions {
+  margin-top: 6px;
+}
+
+.events__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
+  gap: clamp(16px, 2vw, 24px);
+}
+
+.event-card {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  padding: clamp(24px, 3vw, 36px);
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--black-2);
+  transition: border-color 0.25s;
+}
+
+.event-card:hover {
+  border-color: var(--amber);
+}
+
+.event-card__icon {
+  width: 52px;
+  height: 52px;
+  margin-bottom: 8px;
+  color: var(--amber);
+}
+
+.event-card__title {
+  font-size: clamp(32px, 3.2vw, 44px);
+}
+
+.event-card__blurb {
+  color: var(--white-dim);
+  max-width: 48ch;
+}
+
+.event-card__contact {
+  display: grid;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.event-card__contact a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 750;
+  text-decoration: none;
+  overflow-wrap: break-word;
+}
+
+.event-card__contact a:hover {
+  color: var(--amber);
+}
+
+.event-card__contact svg {
+  flex: none;
+  width: 16px;
+  height: 16px;
+  color: var(--amber);
+}
+
+.cross-promo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: clamp(28px, 4vw, 48px);
+  border-radius: var(--radius);
+  border: 1.5px solid rgba(176, 112, 80, 0.5);
+  background:
+    radial-gradient(80% 100% at 100% 0%, rgba(80, 48, 16, 0.6), transparent 70%),
+    var(--oxblood);
+}
+
+.cross-promo > div {
+  display: grid;
+  gap: 10px;
+}
+
+.cross-promo__title {
+  font-size: clamp(38px, 5vw, 68px);
+}
+
+.cross-promo__text {
+  color: var(--white-dim);
+  font-size: 17px;
+}
+
+.events__subhead {
+  margin: clamp(56px, 8vw, 96px) 0 24px;
+}
+
+.artists {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(20px, 3vw, 40px);
+  margin-top: clamp(56px, 8vw, 96px);
+  padding: clamp(28px, 4vw, 48px);
+  border-radius: var(--radius);
+  background: var(--black-2);
+  border: 1.5px dashed var(--line-strong);
+}
+
+.artists__deck {
+  display: grid;
+  place-items: center;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: var(--oxblood);
+  color: var(--amber);
+}
+
+.artists__deck .eq {
+  height: 40px;
+}
+
+.artists__deck .eq span {
+  width: 5px;
+}
+
+.artists__text {
+  display: grid;
+  gap: 10px;
+}
+
+.artists__text p:last-child {
+  color: var(--white-dim);
+}
+
+.artists .btn {
+  text-transform: none;
+  letter-spacing: 0.01em;
+}
+
+@media (max-width: 900px) {
+  .flyer {
+    grid-template-columns: 1fr;
+  }
+  .flyer__photo {
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+  }
+  .artists {
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+}
+
+@media (max-width: 640px) {
+  .artists .btn {
+    width: 100%;
+    font-size: 13px;
+    white-space: normal;
+    padding-block: 10px;
+  }
+}

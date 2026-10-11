@@ -1,0 +1,80 @@
+.btn {
+  --btn-bg: var(--white);
+  --btn-fg: var(--black);
+  --btn-border: var(--white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 24px;
+  border: 2px solid var(--btn-border);
+  border-radius: 999px;
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 880;
+  font-stretch: 112%;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  will-change: transform;
+  transition:
+    background-color 0.18s,
+    color 0.18s,
+    border-color 0.18s;
+}
+
+.btn:hover {
+  --btn-bg: var(--amber);
+  --btn-border: var(--amber);
+}
+
+.btn--ghost {
+  --btn-bg: transparent;
+  --btn-fg: var(--white);
+  --btn-border: var(--line-strong);
+}
+
+.btn--ghost:hover {
+  --btn-bg: transparent;
+  --btn-fg: var(--amber);
+  --btn-border: var(--amber);
+}
+
+.btn--dark {
+  --btn-bg: var(--black);
+  --btn-fg: var(--white);
+  --btn-border: var(--black);
+}
+
+.btn--dark:hover {
+  --btn-bg: var(--oxblood);
+  --btn-border: var(--oxblood);
+  --btn-fg: var(--white);
+}
+
+.btn--sm {
+  min-height: 42px;
+  padding: 0 18px;
+  font-size: 13px;
+}
+
+.btn--lg {
+  min-height: 60px;
+  padding: 0 32px;
+  font-size: 16px;
+}
+
+.btn__icon {
+  display: inline-flex;
+}
+
+.btn__icon svg {
+  width: 18px;
+  height: 18px;
+}

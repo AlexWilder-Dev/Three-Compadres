@@ -1,0 +1,102 @@
+.loc-switch {
+  display: inline-flex;
+  padding: 4px;
+  gap: 2px;
+  border: 1.5px solid var(--line-strong);
+  border-radius: 999px;
+  background: rgba(11, 9, 8, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.loc-switch__option {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 999px;
+  background: none;
+  color: var(--white-dim);
+  font-size: 13px;
+  font-weight: 850;
+  font-stretch: 110%;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.loc-switch__option:hover {
+  color: var(--white);
+}
+
+.loc-switch__option.is-active {
+  color: var(--black);
+}
+
+.loc-switch__pill {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: var(--amber);
+}
+
+.loc-switch__label {
+  position: relative;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.loc-switch__tiny {
+  display: none;
+}
+
+@media (max-width: 440px) {
+  .loc-switch--compact .loc-switch__short {
+    display: none;
+  }
+  .loc-switch--compact .loc-switch__tiny {
+    display: inline;
+  }
+  .loc-switch--compact .loc-switch__option {
+    padding: 0 11px;
+  }
+}
+
+/* Big version in the hero. */
+.loc-switch--full {
+  padding: 5px;
+}
+
+.loc-switch--full .loc-switch__option {
+  min-height: 48px;
+  padding: 0 20px;
+  font-size: 14px;
+}
+
+.loc-switch__code {
+  font-size: 11px;
+  opacity: 0.7;
+}
+
+@media (max-width: 480px) {
+  .loc-switch--full {
+    width: 100%;
+  }
+  .loc-switch--full .loc-switch__option {
+    flex: 1;
+    padding: 0 10px;
+    font-size: 12px;
+  }
+  .loc-switch--full .loc-switch__label {
+    flex-direction: column;
+    gap: 0;
+    align-items: center;
+    line-height: 1.15;
+  }
+}
