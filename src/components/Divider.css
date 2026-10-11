@@ -1,0 +1,42 @@
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  color: var(--butter);
+}
+
+.divider--ink {
+  color: var(--ink);
+}
+
+.divider--gold {
+  color: var(--gold);
+}
+
+.divider__tash {
+  display: block;
+  flex: none;
+  width: clamp(150px, 26vw, 240px);
+}
+
+.divider__tash svg {
+  width: 100%;
+  fill: currentColor;
+  overflow: visible;
+}
+
+.divider__line {
+  flex: 1;
+  height: 3px;
+  border-radius: 3px;
+  background: currentColor;
+}
+
+.divider__line--left {
+  transform-origin: right;
+}
+
+.divider__line--right {
+  transform-origin: left;
+}

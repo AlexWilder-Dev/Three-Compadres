@@ -1,0 +1,14 @@
+.faces {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.faces .face {
+  cursor: pointer;
+}
+
+.faces .face-overlay {
+  pointer-events: none;
+}

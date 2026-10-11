@@ -1,0 +1,98 @@
+.dish {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 22px 22px 20px;
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--char-800);
+  transition: filter 0.3s;
+}
+
+/* filter rather than opacity, so it doesn't fight the motion styles */
+.dish.is-dimmed {
+  filter: grayscale(1) opacity(0.28);
+}
+
+.dish__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.dish__name {
+  font-weight: 800;
+  font-size: clamp(1.3rem, 2.4vw, 1.55rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--butter);
+}
+
+.dish__note {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0;
+  color: var(--text-mute);
+  white-space: nowrap;
+}
+
+.dish__price {
+  font-size: 1.15rem;
+  color: var(--gold);
+}
+
+.dish__desc {
+  color: var(--text-soft);
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+.dish__tags {
+  display: flex;
+  gap: 6px;
+  margin: auto 0 0;
+  padding: 4px 0 0;
+  list-style: none;
+}
+
+.dish--featured {
+  background: var(--butter);
+  border: 3px solid var(--ink-true);
+  box-shadow: 6px 6px 0 var(--gold);
+  --text: var(--ink);
+  --text-soft: rgba(11, 11, 11, 0.8);
+}
+
+.dish--featured .dish__name {
+  color: var(--ink);
+  font-size: clamp(1.6rem, 3vw, 2rem);
+}
+
+.dish--featured .dish__price {
+  color: var(--ink);
+  font-size: 1.4rem;
+}
+
+.dish--featured .tag {
+  color: var(--gold-deep);
+}
+
+.dish__sticker {
+  position: absolute;
+  top: -16px;
+  right: 18px;
+  padding: 8px 14px 5px;
+  border: 3px solid var(--ink-true);
+  border-radius: 999px;
+  background: var(--gold);
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transform: rotate(6deg);
+}

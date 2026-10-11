@@ -1,0 +1,146 @@
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding: calc(var(--nav-h) + 20px) 0 72px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero__glow {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse 60% 42% at 50% 34%, rgba(195, 148, 44, 0.26), transparent 70%),
+    radial-gradient(ellipse 80% 50% at 50% 110%, rgba(254, 210, 137, 0.08), transparent 70%);
+}
+
+.hero__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero__badge {
+  margin-bottom: 8px;
+}
+
+.hero__faces {
+  width: min(100%, 600px, 70svh);
+  margin-bottom: 14px;
+}
+
+.hero__logo {
+  margin: 0;
+}
+
+.hero__logo .logo-img {
+  height: min(42svh, 320px) !important;
+  max-width: 100%;
+}
+
+.hero__title {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 0.22em;
+  font-size: clamp(3.4rem, 16.5vw, 9rem);
+  line-height: 0.82;
+  letter-spacing: -0.045em;
+  text-transform: uppercase;
+  color: var(--butter);
+}
+
+.hero__word {
+  display: inline-block;
+}
+
+@media (min-width: 760px) {
+  .hero__logo {
+  margin: 0;
+}
+
+.hero__logo .logo-img {
+  height: min(42svh, 320px) !important;
+  max-width: 100%;
+}
+
+.hero__title {
+    font-size: clamp(3.4rem, min(9.4vw, 12.5svh), 9rem);
+  }
+}
+
+.hero__tagline {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 18px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(0.9rem, 2.6vw, 1.15rem);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.hero__rule {
+  width: clamp(20px, 6vw, 56px);
+  height: 3px;
+  border-radius: 3px;
+  background: currentColor;
+}
+
+.hero__headline {
+  margin-top: 16px;
+  max-width: 32ch;
+  font-size: clamp(1.1rem, 2.4vw, 1.4rem);
+  line-height: 1.4;
+  color: var(--text-soft);
+}
+
+.hero__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.hero__scroll {
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-left: -22px;
+  border-radius: 50%;
+  color: var(--text-mute);
+  animation: hero-bob 2.2s ease-in-out infinite;
+}
+
+@keyframes hero-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__scroll {
+    animation: none;
+  }
+}
+
+@media (max-height: 640px) {
+  .hero__scroll {
+    display: none;
+  }
+}

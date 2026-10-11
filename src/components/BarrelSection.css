@@ -1,0 +1,209 @@
+.barrel {
+  position: relative;
+  background: var(--ink);
+  isolation: isolate;
+}
+
+.barrel__frame {
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(80px, 12vw, 140px);
+  background:
+    radial-gradient(ellipse 50% 45% at 18% 70%, rgba(255, 90, 31, 0.16), transparent 70%),
+    radial-gradient(ellipse 90% 40% at 50% 100%, rgba(216, 49, 15, 0.14), transparent 75%),
+    linear-gradient(180deg, var(--ink) 0%, var(--char-900) 100%);
+}
+
+.barrel__embers {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.barrel__grain {
+  position: absolute;
+  inset: -50%;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.09;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain 0.9s steps(5) infinite;
+}
+
+@keyframes grain {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(-4%, 3%); }
+  40% { transform: translate(3%, -5%); }
+  60% { transform: translate(-6%, -2%); }
+  80% { transform: translate(5%, 4%); }
+  100% { transform: translate(0, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .barrel__grain {
+    animation: none;
+  }
+}
+
+.barrel__layout {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  gap: 32px;
+}
+
+.barrel__eyebrow {
+  margin-bottom: 14px;
+  --icon-body: var(--gold);
+  --icon-lid: var(--butter);
+}
+
+.barrel__eyebrow svg {
+  filter: drop-shadow(0 0 0 transparent);
+}
+
+.barrel__title {
+  color: var(--butter);
+}
+
+.barrel__method {
+  margin-top: 22px;
+  max-width: 38ch;
+  font-size: clamp(1.15rem, 2vw, 1.35rem);
+  line-height: 1.5;
+  color: var(--text-soft);
+}
+
+.barrel__mission {
+  margin-top: 16px;
+  max-width: 30ch;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--gold);
+}
+
+.barrel__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 28px;
+  margin-top: 24px;
+}
+
+.barrel__row .barrel__mission {
+  flex: 1 1 220px;
+  margin-top: 0;
+}
+
+.barrel__art {
+  flex: none;
+  display: grid;
+  place-items: center;
+}
+
+.barrel-art {
+  width: auto;
+  height: clamp(200px, 34vw, 300px);
+  overflow: visible;
+}
+
+.barrel__photo {
+  width: min(100%, 420px);
+  max-height: 50svh;
+  object-fit: cover;
+  border: 3px solid var(--ink-true);
+  border-radius: var(--radius-lg);
+  box-shadow: 8px 8px 0 var(--gold);
+}
+
+.barrel__strap {
+  margin-bottom: 24px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+
+.barrel__grid {
+  display: grid;
+  gap: 18px;
+}
+
+.barrel__grid .dish {
+  background: rgba(23, 23, 23, 0.86);
+  backdrop-filter: blur(4px);
+}
+
+.barrel__grid .dish--featured {
+  background: var(--butter);
+}
+
+@media (min-width: 640px) {
+  .barrel__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .barrel__layout {
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    align-items: center;
+    gap: 56px;
+  }
+}
+
+/* Pinned: the frame sticks while the page scrolls through the section. */
+.barrel--pinned {
+  height: 300vh;
+}
+
+.barrel--pinned .barrel__frame {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  display: flex;
+  align-items: center;
+  padding-block: calc(var(--nav-h) + 16px) 24px;
+}
+
+.barrel--pinned .barrel__title {
+  font-size: clamp(3rem, min(7vw, 10svh), 6.5rem);
+}
+
+.barrel--pinned .barrel__method {
+  margin-top: 16px;
+  font-size: clamp(1rem, 2.1svh, 1.25rem);
+}
+
+.barrel--pinned .barrel__row {
+  margin-top: 12px;
+}
+
+.barrel--pinned .barrel-art {
+  height: clamp(170px, 30svh, 290px);
+}
+
+.barrel--pinned .barrel__strap {
+  margin-bottom: 14px;
+}
+
+.barrel--pinned .barrel__grid {
+  gap: 16px;
+}
+
+.barrel--pinned .dish {
+  padding: 18px 18px 16px;
+}
+
+.barrel--pinned .dish__desc {
+  font-size: 0.92rem;
+}

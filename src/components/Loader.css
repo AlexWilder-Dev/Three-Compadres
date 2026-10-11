@@ -1,0 +1,37 @@
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: grid;
+  place-items: center;
+  background: var(--ink);
+}
+
+.loader__row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.loader__tash {
+  flex: none;
+  width: min(66vw, 420px);
+  overflow: visible;
+}
+
+.loader__line {
+  flex: 1;
+  height: 4px;
+  border-radius: 4px;
+  background: var(--butter);
+}
+
+.loader__line--left {
+  transform-origin: right;
+  margin-right: 8px;
+}
+
+.loader__line--right {
+  transform-origin: left;
+  margin-left: 8px;
+}

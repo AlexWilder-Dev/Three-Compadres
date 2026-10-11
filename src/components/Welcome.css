@@ -1,0 +1,53 @@
+.welcome__grid {
+  display: grid;
+  gap: 40px;
+  margin-top: clamp(48px, 8vw, 96px);
+}
+
+@media (min-width: 900px) {
+  .welcome__grid {
+    grid-template-columns: 1.1fr 1fr;
+    align-items: end;
+    gap: 64px;
+  }
+}
+
+.welcome__motto {
+  display: flex;
+  flex-direction: column;
+  font-size: clamp(3.4rem, 14vw, 8.5rem);
+  line-height: 0.82;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+.welcome__motto > span {
+  display: block;
+}
+
+.welcome__and {
+  color: var(--gold-deep);
+  font-size: 0.5em;
+  letter-spacing: -0.02em;
+  padding-block: 0.12em;
+}
+
+.welcome__copy {
+  display: grid;
+  gap: 18px;
+}
+
+.welcome__text {
+  font-size: clamp(1.15rem, 2.2vw, 1.4rem);
+  line-height: 1.5;
+  font-weight: 500;
+  color: var(--text-soft);
+}
+
+.welcome__photo {
+  width: 100%;
+  height: auto;
+  border: 3px solid var(--ink);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-hard);
+}

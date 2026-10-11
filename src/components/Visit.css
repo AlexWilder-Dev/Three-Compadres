@@ -1,0 +1,146 @@
+.visit {
+  background: var(--ink);
+}
+
+.visit__head {
+  margin-bottom: clamp(28px, 5vw, 48px);
+}
+
+.visit__head .eyebrow {
+  margin-bottom: 12px;
+}
+
+.visit__grid {
+  display: grid;
+  gap: 22px;
+}
+
+@media (min-width: 900px) {
+  .visit__grid {
+    grid-template-columns: 1.15fr 1fr;
+    gap: 28px;
+  }
+}
+
+.visit__card {
+  padding: clamp(22px, 4vw, 36px);
+  border: 2px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--char-800);
+}
+
+.visit__pin {
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+
+.visit__address {
+  display: flex;
+  flex-direction: column;
+  font-style: normal;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.6rem, 3.6vw, 2.3rem);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+
+.visit__tube {
+  margin-top: 14px;
+  color: var(--text-soft);
+}
+
+.visit__market {
+  margin-top: 18px;
+  padding: 14px 16px 12px;
+  border-left: 5px solid var(--gold);
+  border-radius: 6px;
+  background: rgba(195, 148, 44, 0.12);
+  font-weight: 600;
+  color: var(--butter);
+}
+
+.visit__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 26px;
+}
+
+.visit__hours-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.visit__hours-head h3 {
+  font-size: 1.7rem;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.hours {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 4px;
+}
+
+.hours th,
+.hours td {
+  padding: 12px 14px 10px;
+  text-align: left;
+  font-variant-numeric: tabular-nums;
+}
+
+.hours th {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.hours td {
+  text-align: right;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.hours td.is-closed {
+  color: var(--text-mute);
+  font-weight: 500;
+}
+
+.hours tr.is-today th,
+.hours tr.is-today td {
+  background: var(--butter);
+  color: var(--ink);
+}
+
+.hours tr.is-today th {
+  border-radius: 12px 0 0 12px;
+}
+
+.hours tr.is-today td {
+  border-radius: 0 12px 12px 0;
+}
+
+.hours__today {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 3px 8px 1px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--butter);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  vertical-align: 2px;
+}
+
+.visit__service {
+  margin-top: 26px;
+  color: var(--text-mute);
+  font-size: 0.95rem;
+}
