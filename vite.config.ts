@@ -55,6 +55,9 @@ function venueHead(): Plugin {
         .replaceAll('__VENUE_DESCRIPTION__', escapeHtml(venue.seo.description))
         .replaceAll('__VENUE_NAME__', escapeHtml(venue.name))
         .replaceAll('__VENUE_LOCALE__', venue.seo.locale)
+        .replaceAll('__VENUE_URL__', escapeHtml(venue.seo.siteUrl))
+        .replaceAll('__VENUE_IMAGE__', escapeHtml(new URL(venue.seo.image, venue.seo.siteUrl).href))
+        .replaceAll('__VENUE_IMAGEALT__', escapeHtml(venue.seo.imageAlt))
         .replace('__VENUE_JSONLD__', jsonLd)
     },
   }

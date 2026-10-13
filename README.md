@@ -25,6 +25,8 @@ at build time (see `vite.config.ts`).
 - **Hero:** `venue.heroArt` picks the animated SVG faces (`'faces'`) or the static logo (`'logo'`).
 - **Photos:** `scripts/fetch-images.sh` downloads the venue's photos into `public/images/site/`. Add them to
   `photos` in `venue.ts`: `barrel` and `welcome` slots, plus `gallery` (the gallery section only shows when it has photos).
+- **Link previews:** WhatsApp and social previews use `public/og-image.jpg` (1200 × 630) and the absolute URLs built
+  from `seo.siteUrl`. Update `siteUrl` if the site moves to another address.
 - **Reviews:** add Google reviews to `reviews` in `venue.ts`, word for word. The section stays hidden while it's empty.
 
 ## Deploy

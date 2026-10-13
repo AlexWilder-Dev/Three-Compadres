@@ -128,6 +128,11 @@ export const venue = {
       'With a lively atmosphere, great music, and a focus on simple, well-executed food and drinks, Three Compadres is the go-to spot for a casual bite, drinks with friends, or a laid-back night out in the market.',
     locale: 'en_GB',
     cuisine: ['Mexican', 'Latin American'],
+    // Where this site is published. Link previews (WhatsApp, iMessage, socials) need absolute URLs.
+    siteUrl: 'https://alexwilder-dev.github.io/Three-Compadres/',
+    // Share image in public/, 1200 × 630.
+    image: 'og-image.jpg',
+    imageAlt: 'Three Compadres: Latin Fusion & Barril Grill, Broadway Market, Tooting',
   },
 }
 
